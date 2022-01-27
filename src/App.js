@@ -1,7 +1,12 @@
 import {useState} from 'react';
 import './App.css';
+import Counter from './components/Counter/Counter';
+import Layout from './components/Layout/Layout';
+import People from './components/People/People';
 
-import Person from './components/Person/Person';
+import ToggleButton from './components/ToggleButton/ToggleButton';
+
+import {Routes, Route, BrowserRouter} from 'react-router-dom';
 
 function App() {
   const [users, setUsers] = useState([
@@ -24,7 +29,6 @@ function App() {
       })
     );
 
-
   };
 
   const increaseAge = (index) => {
@@ -37,40 +41,38 @@ function App() {
     })
   };
 
-  const buttonStyle = { margin: "1rem 0" };
+  const deletePerson = (id) => {
 
-  const btnClasses = ['btn'];
+    setUsers(
+      users.filter(user => user.id !== id)
+    );
 
-  if (!isShow) {
-    btnClasses.push('btn--danger');
-  }
+  };
 
   return (
     <div className="App">
-      <button
-        className={btnClasses.join(' ')}
-        style={buttonStyle}
-        onClick={() => setIsShow(!isShow)}
-      >
-        Toggle Button
-      </button>
-      {isShow ? (
-        <div className="people">
-          {users.map((user, index) => {
-            return (
-              <Person
-                key={user.id}
-                name={user.name}
-                age={user.age}
-                increase={() => increaseAge(index)}
-                change={(event) => changeName(event, user.id)}
-              >
-                Hobby: {user.hobby}
-              </Person>
-            );
-          })}
-        </div>
-      ) : null}
+        <BrowserRouter>
+          <Layout>
+              <Routes>
+                <Route path="/modal" element={<h1>Modal will be here</h1>} />
+                <Route path="/" element={<h1>Home</h1>} />
+
+                {/* <Route path="/">
+                  <ToggleButton isShow={isShow} setIsShow={setIsShow} />
+                  <Counter data={users} />
+
+                  {isShow ? (
+                    <People
+                      users={users}
+                      increaseAge={increaseAge}
+                      changeName={changeName}
+                      deletePerson={deletePerson}
+                    />
+                  ) : null}
+                </Route> */}
+              </Routes>
+          </Layout>
+        </BrowserRouter>
     </div>
   );
 }

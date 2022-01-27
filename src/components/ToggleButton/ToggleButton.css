@@ -1,0 +1,11 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #ccc;
+  border: unset;
+  border-radius: 5px;
+}
+.btn--danger {
+  background: red;
+  color: white;
+}
