@@ -10,6 +10,8 @@ function App() {
     { name: "Sam", age: 15, hobby: "play basketball", id: 3 },
   ]);
 
+  const [isShow, setIsShow] = useState(true);
+
   const changeName = (event, id) => {
 
     setUsers(
@@ -35,12 +37,26 @@ function App() {
     })
   };
 
+  const buttonStyle = { margin: "1rem 0" };
+
+  const btnClasses = ['btn'];
+
+  if (!isShow) {
+    btnClasses.push('btn--danger');
+  }
+
   return (
     <div className="App">
-      {/* <button onClick={changeName}>Change name</button> */}
-      <div className="people">
-        {
-          users.map((user, index) => {
+      <button
+        className={btnClasses.join(' ')}
+        style={buttonStyle}
+        onClick={() => setIsShow(!isShow)}
+      >
+        Toggle Button
+      </button>
+      {isShow ? (
+        <div className="people">
+          {users.map((user, index) => {
             return (
               <Person
                 key={user.id}
@@ -52,10 +68,9 @@ function App() {
                 Hobby: {user.hobby}
               </Person>
             );
-          })
-        }
-
-      </div>
+          })}
+        </div>
+      ) : null}
     </div>
   );
 }
