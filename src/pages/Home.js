@@ -6,11 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 function Home() {
   const users = useSelector(state => state.people);
-  // const [users, setUsers] = useState([
-  //   { name: "Mike", age: 30, hobby: "play chess", id: 1 },
-  //   { name: "John", age: 20, hobby: "play football", id: 2 },
-  //   { name: "Sam", age: 15, hobby: "play basketball", id: 3 },
-  // ]);
 
   const dispatch = useDispatch();
 
@@ -26,13 +21,6 @@ function Home() {
       type: "INCREASE_AGE",
       payload: index,
     });
-    // setUsers((users) => {
-    //   const copyUsers = [...users];
-    //   let user = { ...copyUsers[index] };
-    //   user.age++;
-    //   copyUsers[index] = user;
-    //   return copyUsers;
-    // });
   };
 
   const deletePerson = (id) => {
@@ -40,7 +28,6 @@ function Home() {
       type: "DELETE_USER",
       payload: id
     })
-    // setUsers(users.filter((user) => user.id !== id));
   };
 
   return (

@@ -12,6 +12,7 @@ function People({ users, increaseAge, changeName, deletePerson }) {
             increase={() => increaseAge(index)}
             change={(event) => changeName(event, user.id)}
             remove={() => deletePerson(user.id)}
+            id={user.id}
           >
             Hobby: {user.hobby}
           </Person>

@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import './Person.css';
 
-function Person({ name, increase, age, change, remove, children }) {
+function Person({ name, increase, age, change, remove, children, id }) {
   return (
     // React.createElement('div', {className: "title"},
     //   React.createElement('h3', {className: "title"}, props.name),
@@ -15,6 +16,7 @@ function Person({ name, increase, age, change, remove, children }) {
       <div className="hobby" onClick={remove}>
         {children}
       </div>
+      <Link to={`/post/${id}`}>Подробнее</Link>
     </div>
   );
 }
