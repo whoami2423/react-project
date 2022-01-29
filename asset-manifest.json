@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/whoami2423/react-project.git/static/css/main.c2141db7.css",
+    "main.js": "/whoami2423/react-project.git/static/js/main.43579256.js",
+    "static/js/787.b5a4f0a1.chunk.js": "/whoami2423/react-project.git/static/js/787.b5a4f0a1.chunk.js",
+    "index.html": "/whoami2423/react-project.git/index.html",
+    "main.c2141db7.css.map": "/whoami2423/react-project.git/static/css/main.c2141db7.css.map",
+    "main.43579256.js.map": "/whoami2423/react-project.git/static/js/main.43579256.js.map",
+    "787.b5a4f0a1.chunk.js.map": "/whoami2423/react-project.git/static/js/787.b5a4f0a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2141db7.css",
+    "static/js/main.43579256.js"
+  ]
+}
